@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__chrome-devtools__navigate_page",
+      "Bash(curl -I http://localhost:5173)",
+      "Bash(curl -I http://localhost:5173/index.html)",
+      "mcp__chrome-devtools__list_console_messages",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl -I http://localhost:5174/index.html)",
+      "mcp__chrome-devtools__list_network_requests",
+      "Bash(curl -I http://localhost:5175/favicon.ico)",
+      "Bash(curl -I http://localhost:5175/@vite/client)",
+      "Bash(curl -I http://localhost:5175/src/main.jsx)",
+      "Bash(powershell -Command \"$ports=5173,5174,5175; foreach\\($p in $ports\\){$conn=Get-NetTCPConnection -LocalPort $p -ErrorAction SilentlyContinue; if\\($conn\\){Stop-Process -Id $conn.OwningProcess -Force; Write-Host 'Killed process on port' $p}}\")",
+      "Bash(powershell -Command \"$ports = 5173,5174,5175; foreach \\($p in $ports\\) { $conn = Get-NetTCPConnection -LocalPort $p -ErrorAction SilentlyContinue; if \\($conn\\) { Stop-Process -Id $conn.OwningProcess -Force; Write-Host 'Killed process on port' $p } }\")",
+      "Bash(powershell -Command \"Get-NetTCPConnection -LocalPort 5173 | ForEach-Object { Stop-Process -Id \\\\$_.OwningProcess -Force }; Get-NetTCPConnection -LocalPort 5174 | ForEach-Object { Stop-Process -Id \\\\$_.OwningProcess -Force }; Get-NetTCPConnection -LocalPort 5175 | ForEach-Object { Stop-Process -Id \\\\$_.OwningProcess -Force }\")"
+    ]
+  }
+}
