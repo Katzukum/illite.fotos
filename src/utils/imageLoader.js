@@ -4,10 +4,11 @@
 
 export const loadImages = async (category) => {
   try {
-    const response = await fetch(`/images/${category}/manifest.json`);
+    // Determine the base path from window.location or use relative
+    const response = await fetch(`./images/${category}/manifest.json`);
     if (!response.ok) throw new Error(`Failed to load manifest for ${category}`);
     const filenames = await response.json();
-    return filenames.map(name => `/images/${category}/${name}`);
+    return filenames.map(name => `./images/${category}/${name}`);
   } catch (error) {
     console.error(`Error loading images for ${category}:`, error);
     return [];
@@ -24,7 +25,7 @@ export const loadRandomImages = async (category, count) => {
 
 export const loadPublishedWorks = async () => {
   try {
-    const response = await fetch('/images/published/metadata.json');
+    const response = await fetch('./images/published/metadata.json');
     if (!response.ok) throw new Error('Failed to load published works metadata');
     const metadata = await response.json();
     

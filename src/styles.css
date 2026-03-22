@@ -105,15 +105,18 @@ section {
   align-items: center;
 }
 
-.nav-link {
+.nav-link, .nav-link-btn {
   font-family: var(--font-subhead);
   text-decoration: none;
   color: var(--text-primary);
   font-size: 14px;
   transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link-btn:hover {
   color: var(--accent-chrome);
 }
 
